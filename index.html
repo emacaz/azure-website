@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      nav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        display: inline-block;
+        padding: 20px;
+        text-decoration: none;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+      }
+
+      main {
+        margin: 30px 15px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+        nav ul li {
+          display: block;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Simple Website</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p>
+        This is a simple website to demonstrate basic HTML, CSS, and JavaScript.
+      </p>
+      <button id="colorButton">Change Background Color</button>
+    </main>
+    <footer>
+      <p>Copyright © 2024</p>
+    </footer>
+    <script>
+      document
+        .getElementById("colorButton")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = getRandomColor();
+        });
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html>
